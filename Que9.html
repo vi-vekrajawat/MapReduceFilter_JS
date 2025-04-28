@@ -1,0 +1,37 @@
+<script>
+    const products = [
+  { name: "Product 1", price: 20, category: "Electronics" },
+  { name: "Product 2", price: 30, category: "Clothes" },
+  { name: "Product 3", price: 40, category: "Electronics" },
+  { name: "Product 4", price: 50, category: "Clothes" },
+  { name: "Product 5", price: 60, category: "Clothes" },
+  { name: "Product 6", price: 70, category: "Electronics" },
+  { name: "Product 7", price: 80, category: "Clothes" },
+  { name: "Product 8", price: 90, category: "Electronics" },
+];
+
+const arrProduct = []
+for(let i =0;i<products.length;i++){
+    if(!(arrProduct.includes(products[i].category))){
+        arrProduct.push(products[i].category) 
+    }
+}
+
+for(let i =0;i<arrProduct.length;i++){
+    let count =0;
+    for(let j =0;j<products.length;j++){
+        if(arrProduct[i]===products[j].category){
+            count++
+        }
+    }
+    const getPrice = products.filter(p => {
+        if(arrProduct[i]===p.category)
+            return true
+        }).map(pr=>pr.price).reduce((acc,sum)=> acc+sum ,0)
+    
+    if(getPrice/count>50){
+        document.write("Categeory :"+ arrProduct[i]+", average : "+(getPrice/count)+"<br>")
+    }
+}
+// document.write(arrProduct)
+</script>

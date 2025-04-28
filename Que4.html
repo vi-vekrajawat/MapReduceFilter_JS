@@ -1,0 +1,48 @@
+<script>
+     const input = [
+  {
+    name: "John",
+    age: 13,
+  },
+  {
+    name: "Mark",
+    age: 56,
+  },
+  {
+    name: "Rachel",
+    age: 45,
+  },
+  {
+    name: "Nate",
+    age: 67,
+  },
+  {
+    name: "Jennifer",
+    age: 65,
+  },
+];
+
+const age = input.map(person=> person.age)
+document.write(age)
+document.write("<br>")
+
+
+let y = age[0]
+let old = age[0]
+for(let i =0;i<age.length;i++){
+  if(age[i]<=y){
+    y = age[i]
+  }
+  else{
+    old = age[i]
+  }
+}
+document.write("Youngest : "+y)
+document.write("<br>")
+document.write("Oldest : "+old)
+document.write("<br>")
+document.write("Difference is : "+(old-y))
+
+
+
+</script>

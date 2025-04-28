@@ -1,0 +1,22 @@
+<script>
+  const students = [
+    { name: "Alice", scores: [90, 85, 92] },
+    { name: "Bob", scores: [75, 80, 85] },
+    { name: "Charlie", scores: [90, 95, 85] },
+    { name: "David", scores: [100, 100, 100] }
+  ];
+
+  for (let i = 0; i < students.length; i++) {
+    let scores = students[i].scores;
+    let sum = 0;
+    for (let j = 0; j < scores.length; j++) {
+      sum += scores[j];
+    }
+
+    let average = sum / scores.length;
+
+    if (average > 90) {
+      document.write("Name: " + students[i].name + "  Average: " + average + "<br>");
+    }
+  }
+</script>
